@@ -1,0 +1,116 @@
+{% extends 'layoutBody.html' %}
+
+{% block main %}
+
+
+
+<div class="frame">
+  <div class="my-flex">
+    <div class="flex-rowA">
+      <div class="box">
+        <img src="{{url_for('static',filename='img/'~Module.moduleName~'.png')}}" alt="module">
+      </div>
+    </div>
+    <div class="flex-rowB">
+      <div class="box">
+        <div class="frame">
+          <div class="box2">
+            <p>
+                {{list(Module.__dict__.keys())[8]~':'}}
+            </p>
+            <div class="score">
+              <p>
+                {{list(Module.__dict__.values())[8]~'/10'}}
+              </p>
+            </div>
+          </div>
+          <div class="box2">
+            <p>
+              {{list(Module.__dict__.keys())[9]~':'}}:
+            </p>
+              <div class="score">
+                <p>
+                  {{list(Module.__dict__.values())[9]~'/10'}}
+                </p>
+              </div>
+          </div>
+          <div class="box2">
+            <p>
+             {{list(Module.__dict__.keys())[10]~':'}}
+            </p>
+              <div class="score">
+                <p>
+                  {{list(Module.__dict__.values())[10]~'/10'}}
+                </p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="frame">
+          <div class="box2">
+            <p>
+              {{list(Module.__dict__.keys())[7]~':'}}
+            </p>
+            <div class="score">
+              <p>
+                {{list(Module.__dict__.values())[7]}}
+              </p>
+            </div>
+          </div>
+          <div class="box2">
+            <button type="button"class="btn btn-primary" data-toggle="popover" title="Description" data-content="{{list(Module.__dict__.values())[2]}}">
+              <p>
+                {{list(Module.__dict__.keys())[2]~':'}}
+              </p>
+            </button>
+          </div>
+          <div class="box2">
+            <p>
+              {{list(Module.__dict__.keys())[4]~':'}}
+            </p>
+            <div class="score">
+              <p>
+                 {{list(Module.__dict__.values())[4]}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-rowC">
+      <div class="box">
+        <div class="frame">
+          <div class="box2">
+            <p>
+              {{list(Module.__dict__.keys())[1]~':'}}:
+            </p>
+            <div class="score">
+              <p>
+                 {{Module.moduleName}}
+              </p>
+            </div>
+          </div>
+          <div class="box2">
+            <form action="">
+              <input type="hidden" id="moduleID" name="moduleID" value="{{ Module.moduleID }}">
+              <input class="btn btn-primary" type="submit" value="Add to Cart">
+            </form>
+          </div>
+          <div class="box2">
+            <p>
+                {{list(Module.__dict__.keys())[3]~':'}}
+            </p>
+            <div class="score">
+              <p>
+                {{Module.price}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

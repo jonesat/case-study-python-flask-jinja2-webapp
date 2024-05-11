@@ -1,0 +1,131 @@
+{% extends 'layoutCartContent.html' %}
+{% block main %}
+
+{% for item in Module %}
+    <div class="card" style="width: 100%; height: 800px;">
+      <div class="diamond-list">
+        <div class="diamond">
+          <div class="image">
+               <img src="{{url_for('static',filename='img/'~list(item.values())[1]~'.png')}}" alt="">
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              {{list(item.keys())[1]~':'}}
+            </p>
+              <div class="score2">
+                <h3>
+                  {{list(item.values())[1]}}
+                </h3>
+              </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              {{list(item.keys())[3]~':'}}
+            </p>
+            <div class="score2">
+              <h3>
+                {{list(item.values())[3]}}
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              {{list(item.keys())[11]~':'}}
+            </p>
+            <div class="score2">
+              <h3>
+                {{list(item.values())[11]}}
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              {{list(item.keys())[8]~':'}}
+            </p>
+            <div class="score2">
+
+                <h3>
+                  {{list(item.values())[8]~'/10'}}
+                </h3>
+
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              {{list(item.keys())[9]~':'}}
+            </p>
+            <div class="score2">
+                <h3>
+                  {{list(item.values())[9]~'/10'}}
+                </h3>
+              </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+            {{list(item.keys())[10]~':'}}
+            </p>
+            <div class="score2">
+                <h3>
+                  {{list(item.values())[10]~'/10'}}
+                </h3>
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              Module Details:
+            </p>
+            <div class="score2">
+              <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{list(item.values())[1]}}">
+                <p>
+                  See more:
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="{{list(item.values())[1]}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog-lg modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <!-- <div class="modal-header"></div> -->
+            <div class="modal-body">
+              <embed type="text/html" src="{{url_for('main.DetailModule',moduleType = list(item.values())[5],moduleName=list(item.values())[1])}}" width="100%" height="100%">
+            </div>
+            <div class="modal-footer">
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              {% for message in messages %}
+              <div class="flash">
+                {{ message }}
+
+              </div>
+              {% endfor %}
+              {% endif %}
+              {% endwith %}
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+
+
+{% endblock %}

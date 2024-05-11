@@ -1,0 +1,58 @@
+{% extends 'layoutBody.html' %}
+
+{% block head %}
+<section  class="hero">
+  <span role="img" aria-label="You need a new ship">
+  </span>
+
+
+  <div>
+    <nav>
+      <ul>
+        <li class="active">
+          <div>
+            <a href="{{url_for('main.ProductsChassis',chassisName='All')}}">
+              <h4>
+                Build-a-Battleship
+              </h4>
+            </a>
+          </div>
+        </li>
+        <li>
+          <a href="{{url_for('main.ProductsChassis',chassisName='All')}}">
+            Ship Chassis
+          </a>
+        </li>
+        <li>
+          <a href="{{url_for('main.ProductsModules',moduleType='Engine',quality='All')}}">
+            Engines
+          </a>
+        </li>
+        <li>
+          <a href="{{url_for('main.ProductsModules',moduleType='System',quality='All')}}">
+            Systems
+          </a>
+        </li>
+        <li>
+          <a href="{{url_for('main.ProductsModules',moduleType='Weapon',quality='All')}}">
+            Weapons
+          </a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#cart">
+            Cart
+          </button>
+        </li>
+        <li>
+          <form class="form-inline my-2 my-lg-0 ml-5" action="{{url_for('main.search')}}">
+          	<input class="form-control" type="search" placeholder="Search" aria-label="Search" name = "search">
+          	<button class="btn btn-outline-black btn btn-secondary btn-s my-0 ml-1"
+              	type="submit">Search</button>
+          </form>
+
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+{% endblock %}

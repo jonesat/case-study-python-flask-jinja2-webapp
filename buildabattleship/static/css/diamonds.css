@@ -1,0 +1,201 @@
+.frame {
+	/* height: 500px;
+	width: 500px; */
+	display: flex;
+  flex-direction: row;
+  /* margin-top: 50px;
+  margin-left: 300px; */
+transform: scale(0.83);
+	align-items:center;
+	justify-content: center;
+  text-align: center;
+
+	background: inherit;
+	border-radius: 8px;
+}
+
+[class*="flex-row"]{
+	/* display:inline-grid; */
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  margin-top: 130px;
+  min-height: 10vh;
+	min-width: 10vw;
+}
+.box{
+  display: flex;
+	width: 250px;
+	height: 250px;
+	background-color:  #141a1c ;
+	border: 1px solid  #334046 ;
+	border-radius: 10px;
+	transform: scale(1.13) rotate(45deg);
+  transition: 1s;
+	margin: -20px 180px -140px 20px;
+  min-height: 10vh;
+	min-width: 10vw;
+	overflow:hidden;
+	position: relative;
+  justify-content:center;
+  align-items:center;
+
+
+
+}
+.box>*{
+  /* color: white */
+  color: white;
+  transform: rotate(-45deg);
+	transition: 1s;
+
+}
+.box>img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.box:hover {
+  transform: scale(2.2) rotate(-45deg);
+
+  z-index:2
+}
+.box:hover>*{
+  transform: rotate(45deg);
+
+}
+.flex-rowB{
+flex: 1 2 auto;
+flex-direction:row;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+
+/* .flex-rowA{
+flex-direction:row;
+justify-content: center;
+background-color:  #0f1315  ;
+}
+
+
+.flex-rowC{
+flex-direction:row;
+justify-content: center;
+background-color:  #1a2023  ;
+}
+.photo{
+	position:  absolute;
+	transform: rotate(-45deg);
+	width: 165%;
+	height: 180%;
+	top: -50px;
+	left: -50px;
+	background-position:  0 30px;
+  background-image: url(https://somosmulheresreais.files.wordpress.com/2010/01/faustao.jpeg);
+} */
+
+.box2 {
+	height: 105px;
+	width: 105px;
+	/* cursor: pointer; */
+	background: #1f262a;
+	border: 3px solid #334046 ;
+	box-shadow: 1px 4px 1px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	transition: all 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+	transform: rotate(45deg);
+	margin-top: 5px;
+	margin-left: 0px;
+	font-size: 1vh;
+	justify-content: center;
+	align-items: center;
+
+	z-index: 1;
+}
+.box2>form{
+  margin-top: 0px;
+  margin-left:0px;
+
+	height:100px;
+	width: 100px;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+	text-overflow: ellipsis;
+	font-size: 1vh;
+
+}
+.box2>input{
+	transform: rotate(-45deg);
+	font-size: 1vh;
+}
+	.box2:hover{
+		/* background: lighten(#334046 , 1); */
+		box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+	}
+	.box2:nth-child(even) {
+		border-color: #fff;
+		background-color: #1a2023 ;
+		margin-bottom: -180px;
+		margin-left: -18px;
+		margin-right: -18px;
+		margin-top: -10px; /*+70*/
+		z-index: 2;
+	}
+}
+.score{
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: white;
+	border-color: 2px solid white;
+	border-radius: 15px;
+	z-index: 3;
+}
+.score>p{
+	margin-top: 25px;
+	margin-left: -5px;
+transform: rotate(-45deg);
+font-size: 18px;
+color:white ;}
+
+.score>h5{
+  font-size: 15px;
+  color: white;
+  border-color: #293338;
+  border: 2px;
+}
+
+.box2 .btn {
+	/* position:relative; */
+	/* margin-top: 5px; */
+	color: white;
+	background: none;
+	word-wrap: break-word;
+	border: none;
+  height:100%;
+  width:100%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+
+
+}
+.box2 .btn:hover{
+	background: lighten(#334046 , 1);
+	box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+	transition: 0.5s;
+}
+.box2 .btn>p{
+	margin-top: 3px;
+	margin-left: -6px;
+	transform: rotate(-45deg);
+}
+.box2 .btn:hover>p{
+	transform: rotate(-45deg);
+}
+.flash {
+	border: #fff
+	z-index: 3;
+}

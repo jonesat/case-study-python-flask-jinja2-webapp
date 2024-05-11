@@ -1,0 +1,254 @@
+html,body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* background: none!important; */
+
+  background-color: #0a0d0e
+}
+h1 {
+  color: white;
+  text-align:center;
+}
+h3 {
+  color: white;
+  text-align:center;
+}
+/* https://www.schemecolor.com/gunmetal-grey-shades.php */
+/* https://colorswall.com/palette/27750/ */
+/* My colour scheme */
+
+#wrapper{
+  margin: auto;
+  width: 100%
+  max-width:100%
+}
+
+#navigationbar{
+  clear: both;
+  height: 100px;
+  border-radius: 25px;
+  background-color: #848689;
+}
+
+#companyname{
+  margin:0;
+  float:left;
+  padding: 5px;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+#companyname a{
+  color: #848689;
+  text-decoration:none;
+}
+
+nav{
+  float: right;
+  align-items: center;
+  justify-content: center;
+  }
+nav ul{
+  list-style:none;
+  margin: 0;
+  padding-left: 0;
+}
+
+nav ul li{
+  color: #fff;
+
+  float: left;
+  padding: 1rem;
+  border-right: 1px solid #bbb;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+
+}
+
+nav ul li a{
+  display: block;
+  text-decoration: none;
+  color: #AAA9AD ;
+}
+nav ul li:hover,
+nav ul li:focus-within{
+  background-color: #5B676D;
+  cursor: pointer;
+}
+
+nav ul li:focus-within a {
+  outline: none;
+  background-color: white;
+}
+
+nav ul li ul {
+  background-color: white;
+  visibility: hidden;
+  opacity: 0
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  white-space: nowrap;
+}
+
+nav ul li:hover>ul,
+nav ul li:focus-within>ul
+nav ul li ul:hover,
+nav ul li ul:focus{
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+nav ul li ul li{
+  background-color: white;
+  width: 100%;
+  display: inline-block;
+}
+
+nav li:last-child{
+  border-right: none;
+}
+nav .active{
+  background-color: #1f262a ;
+}
+
+.hero{
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+  color: white;
+
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.hero>* {
+  color:#848689;
+}
+.hero>h1{
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+.hero>a{
+  color: white;
+  opacity: 0.5;
+
+}
+.hero>h2{
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+.hero .btn{
+ background: inherit;
+ color: white;
+ border-radius: 10px;
+
+}
+.index{
+  color:white;
+}
+
+.modal {
+  border:none;
+  height: 90%;
+  background: none;
+  /* width: 90%; */
+  /* color: #2e3a3f ; */
+  /* background-color: #0a0d0e ; */
+
+  padding: 20px;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+}
+.modal-backdrop
+{
+    opacity:0.9 !important;
+}
+.modal-dialog-lg {
+  background:  none;
+  margin-left: 350px;
+  height:90%;
+  width: 60%;
+  /* background-color: #0a0d0e ; */
+
+  /* color: #2e3a3f ; */
+}
+.modal-content {
+  margin-top: 150px;
+  width:90%;
+  height:102%;
+  /* background-color: #0a0d0e ; */
+  background: none;
+}
+
+.modal-footer {
+height: 15%;
+width: 100%;
+margin: 0px;
+padding: 0px;
+opacity: 100%;
+/* background-color: #0a0d0e ; */
+/* border-color: #0a0d0e ; */
+background: none;
+}
+.modal-header {
+height: 100%;
+width: 100%;
+margin: 0px;
+padding: 0px;
+/* background-color: #0a0d0e ; */
+background: none;
+}
+.modal-body {
+margin-top: -150px;
+margin-left: 50px;
+  height: 85%;
+  /* background-color: #0a0d0e ; */
+  background: none;
+  z-index: 2;
+}
+.modal .body {
+  background: none;
+}
+.card {
+  height:75%;
+  background: inherit;
+  border: none;
+}
+.btn .popover{
+  color:white;
+  position: absolute;
+}
+.input-group>.btn{
+border-color: #2e3a3f ;
+}
+/* .btn-secondary{
+  color:white;
+  background-color: #141a1c ;
+  transform: rotate(45deg);
+} */
+.formy>* {
+  /* background-color: #0a0d0e */
+  background: none;
+}
+.form-example{
+  background-color: #0a0d0e
+}
+/* .modal>body {
+  background: none !important;
+} */

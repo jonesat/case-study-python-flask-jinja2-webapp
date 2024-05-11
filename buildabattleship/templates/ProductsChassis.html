@@ -1,0 +1,135 @@
+{% extends 'layoutCartContent.html' %}
+{% block main %}
+
+{% for item in Chassis %}
+    <div class="card" style="width: 100%; height: 800px;">
+      <div class="diamond-list">
+        <div class="diamond">
+          <div class="image">
+               <img src="{{url_for('static',filename='img/'~item.chassisName~'.png')}}" alt="">
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              Name:
+            </p>
+              <div class="score2">
+                <h3>
+                  {{item.chassisName}}
+                </h3>
+              </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              Price:
+            </p>
+            <div class="score2">
+              <h3>
+                {{item.price}}
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              Key Feature:
+            </p>
+            <div class="score2">
+              <h3>
+                {{item.keyFeature}}
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              System Slot:
+            </p>
+            <div class="score2">
+              <a class="btn btn-secondary" href="{{url_for('main.ProductsModules',moduleType='System',quality=item.systemSlotQuality)}}" role="button">
+                <p>
+                  {{'Quality '+item.systemSlotQuality}}
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              Engine Slot :
+            </p>
+            <div class="score2">
+              <a class="btn btn-secondary" href="{{url_for('main.ProductsModules',moduleType='Engine',quality=item.engineSlotQuality)}}" role="button">
+                <p>
+                  {{'Quality '+item.engineSlotQuality}}
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              Weapon Slot:
+            </p>
+            <div class="score2">
+              <a class="btn btn-secondary" href="{{url_for('main.ProductsModules',moduleType='Weapon',quality=item.weaponSlotQuality)}}" role="button">
+                <p>
+                  {{'Quality '+item.weaponSlotQuality}}
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="diamond">
+          <div class="diamond2">
+            <p>
+              Ship Details:
+            </p>
+            <div class="score2">
+              <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{item.chassisName}}">
+                <p>
+                  See more:
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="{{item.chassisName}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog-lg modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <!-- <div class="modal-header"></div> -->
+            <div class="modal-body">
+              <embed type="text/html" src="{{url_for('main.DetailChassis',chassisName=item.chassisName)}}" width="100%" height="100%">
+            </div>
+            <div class="modal-footer">
+              <!-- {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              {% for message in messages %}
+              <div class="flash">
+                {{ message }}
+
+              </div>
+              {% endfor %}
+              {% endif %}
+              {% endwith %} -->
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+
+
+{% endblock %}

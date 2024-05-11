@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="My spaceship app">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/mystyle.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/diamonds.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/menulist.css') }}">
+
+    <title> Build-a-Battleship </title>
+  </head>
+  <body>
+    <header>
+      {% block head %}{% endblock %}
+    </header>
+    <main>
+      {% block main %}{% endblock %}
+      {% block modalCart %}{% endblock %}
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script>
+        $(document).ready(function(){
+          $('[data-toggle="popover"]').popover();
+        });
+      </script>
+      <script>
+      $('.popover-dismiss').popover({
+        trigger: 'focus'
+        })
+      </script>
+
+      <script type="text/javascript">
+      $('[data-toggle="popover"]').popover();
+
+        $('body').on('click', function (e) {
+            $('[data-toggle="popover"]').each(function () {
+                //the 'is' for buttons that trigger popups
+                //the 'has' for icons within a button that triggers a popup
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                    $(this).popover('hide');
+                }
+            });
+        });
+
+      </script>
+    </main>
+  </body>
+</html>
